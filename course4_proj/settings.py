@@ -41,7 +41,7 @@ class Dev(Configuration):
             },
         }
 
-        OMDB_KEY = "abc123"
+        OMDB_KEY = "86eadda6"
 
 
         # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -79,7 +79,13 @@ class Dev(Configuration):
             'django.contrib.staticfiles',
             'movies',
             'gh',
+            'django_celery_results',
         ]
+
+        # CELERY settings
+        CELERY_RESULT_BACKEND = "django-db"
+        CELERY_BROKER_URL = "redis://localhost:6379/0"
+
 
         # MIDDLEWARE = [
         #     'django.middleware.security.SecurityMiddleware',
